@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\AsistenciaController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\MatriculaController;
@@ -48,3 +49,10 @@ Route::post('/agregarMatricula',[MatriculaController::class,'store']);
 Route::get('/mostrarMatricula/{id}',[MatriculaController::class,'show']);
 Route::put('/editarMatricula/{id}',[MatriculaController::class,'update']);
 Route::delete('/eliminarMatricula/{id}',[MatriculaController::class,'destroy']);
+
+
+Route::get('/listaAsistencias',[AsistenciaController::class,'index']);
+Route::post('/agregarAsistencia',[AsistenciaController::class,'store']);
+Route::get('/mostrarAsistencia/{id}',[AsistenciaController::class,'show']);
+Route::put('/editarAsistencia/{id}',[AsistenciaController::class,'update']);
+Route::delete('/eliminarAsistencia/{id}',[AsistenciaController::class,'destroy']);

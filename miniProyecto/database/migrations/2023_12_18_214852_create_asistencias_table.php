@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('matriculas', function (Blueprint $table) {
+        Schema::create('asistencias', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_estudiante');
-            $table->foreign('id_estudiante')->references('id')->on('alumnos')->onDelete('cascade');
-            $table->unsignedBigInteger('id_curso');
-            $table->foreign('id_curso')->references('id')->on('cursos')->onDelete('cascade');
+            $table->unsignedBigInteger('id_matricula');
+            $table->date('fecha');
+            $table->enum('EstadoAsistencia',['A', 'T', 'F'])->default('A');
+            $table->foreign('id_matricula')->references('id')->on('matriculas')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('matriculas');
+        Schema::dropIfExists('asistencias');
     }
 };

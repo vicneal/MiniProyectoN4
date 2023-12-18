@@ -3,6 +3,7 @@
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\MatriculaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,3 +41,10 @@ Route::post('/agregarCurso',[CursoController::class,'store']);
 Route::get('/mostrarCurso/{id}',[CursoController::class,'show']);
 Route::put('/editarCurso/{id}',[CursoController::class,'update']);
 Route::delete('/eliminarCurso/{id}',[CursoController::class,'destroy']);
+
+
+Route::get('/listaMatriculas',[MatriculaController::class,'index']);
+Route::post('/agregarMatricula',[MatriculaController::class,'store']);
+Route::get('/mostrarMatricula/{id}',[MatriculaController::class,'show']);
+Route::put('/editarMatricula/{id}',[MatriculaController::class,'update']);
+Route::delete('/eliminarMatricula/{id}',[MatriculaController::class,'destroy']);

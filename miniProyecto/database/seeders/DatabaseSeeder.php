@@ -24,5 +24,7 @@ class DatabaseSeeder extends Seeder
         $alumnoSeeder->run();
         $cursoSeeder = new CursoSeeder();
         $cursoSeeder->run();
+        $matriculaSeeder = new MatriculaSeeder();
+        $matriculaSeeder->run();
     }
 }

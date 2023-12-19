@@ -18,15 +18,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $docenteSeeder = new DocenteSeeder();
-        $docenteSeeder->run();
-        $alumnoSeeder = new AlumnoSeeder();
-        $alumnoSeeder->run();
-        $cursoSeeder = new CursoSeeder();
-        $cursoSeeder->run();
-        $matriculaSeeder = new MatriculaSeeder();
-        $matriculaSeeder->run();
-        $asistenciaSeeder = new AsistenciaSeeder();
-        $asistenciaSeeder->run();
+        // $docenteSeeder = new DocenteSeeder();
+        // $docenteSeeder->run();
+        // $alumnoSeeder = new AlumnoSeeder();
+        // $alumnoSeeder->run();
+        // $cursoSeeder = new CursoSeeder();
+        // $cursoSeeder->run();
+        // $matriculaSeeder = new MatriculaSeeder();
+        // $matriculaSeeder->run();
+        // $asistenciaSeeder = new AsistenciaSeeder();
+        // $asistenciaSeeder->run();
     }
 }

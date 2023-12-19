@@ -56,3 +56,40 @@ Route::post('/agregarAsistencia',[AsistenciaController::class,'store']);
 Route::get('/mostrarAsistencia/{id}',[AsistenciaController::class,'show']);
 Route::put('/editarAsistencia/{id}',[AsistenciaController::class,'update']);
 Route::delete('/eliminarAsistencia/{id}',[AsistenciaController::class,'destroy']);
+
+
+
+// { DOCENTE
+//
+//     "nombre": "Jaylon Heathcote Jr.",
+//     "apellido": "Nolan",
+//     "fecha_nacimiento": "2020-09-03",
+//     "correo": "houston29@gmail.com",
+//     "telefono": "+1-743-586-3830",
+//     "direccion": "321 Myrl Station\nNew Roel, OK 22856"
+//   }
+
+// { ALUMNO
+//
+//     "nombre": "Jaylon Heathcote Jr.",
+//     "apellido": "Nolan",
+//     "fecha_nacimiento": "2020-09-03",
+//     "correo": "houston29@gmail.com",
+//     "telefono": "+1-743-586-3830",
+//     "direccion": "321 Myrl Station\nNew Roel, OK 22856"
+//   }
+
+// { CURSO
+//     "nombre_curso": "ut",
+//   }
+
+// { MATRICULA
+//     "id_estudiante": 6,
+//     "id_curso": 7,
+//   }
+
+// {
+//     "id_matricula": 6,
+//     "fecha": "2003-06-13",
+//     "EstadoAsistencia": "A",
+//   }

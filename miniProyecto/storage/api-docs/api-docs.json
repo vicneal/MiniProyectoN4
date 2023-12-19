@@ -1,0 +1,303 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API docentes",
+        "description": "listado de URI's de la API Docentes ",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/"
+        }
+    ],
+    "paths": {
+        "/api/listaDocentes": {
+            "get": {
+                "tags": [
+                    "Docente"
+                ],
+                "summary": "Listado de todos los registros de los Docentes",
+                "operationId": "6b1f175246f737f324527d8d8ce57176",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "nombre": {
+                                                        "type": "string",
+                                                        "example": "Aderson Felix"
+                                                    },
+                                                    "apellido": {
+                                                        "type": "string",
+                                                        "example": "Jara Lazaro"
+                                                    },
+                                                    "fecha_nacimiento": {
+                                                        "type": "string",
+                                                        "format": "date",
+                                                        "example": "2020-09-03"
+                                                    },
+                                                    "correo": {
+                                                        "type": "string",
+                                                        "example": "houston29@gmail.com"
+                                                    },
+                                                    "telefono": {
+                                                        "type": "string",
+                                                        "example": "+1-743-586-3830"
+                                                    },
+                                                    "direccion": {
+                                                        "type": "string",
+                                                        "example": "321 Myrl Station New Roel, OK 22856"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2023-02-23T00:09:16.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2023-02-23T12:33:45.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/agregarDocente": {
+            "post": {
+                "tags": [
+                    "Docente"
+                ],
+                "summary": "Añade un nuevo Docente",
+                "operationId": "3ab81f874ac610719a9cefeb8f237386",
+                "parameters": [
+                    {
+                        "name": "nombre",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "apellido",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "fecha_nacimiento",
+                        "in": "path",
+                        "required": false,
+                        "schema": {
+                            "type": "date"
+                        },
+                        "example": "2020-09-03"
+                    },
+                    {
+                        "name": "correo",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "houston29@gmail.com"
+                    },
+                    {
+                        "name": "telefono",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "direccion",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Docente creado correctamente",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "nombre": {
+                                            "type": "string",
+                                            "example": "Aderson Felix"
+                                        },
+                                        "apellido": {
+                                            "type": "string",
+                                            "example": "Jara Lazaro"
+                                        },
+                                        "fecha_nacimiento": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2020-09-03"
+                                        },
+                                        "correo": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "houston29@gmail.com"
+                                        },
+                                        "telefono": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "+1-743-586-3830"
+                                        },
+                                        "direccion": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "321 Myrl Station New Roel, OK 22856"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2023-02-23T00:09:16.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2023-02-23T12:33:45.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "No query results for model [App\\\\Models\\\\Docente]"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/mostrarDocente/{id}": {
+            "get": {
+                "tags": [
+                    "Docente"
+                ],
+                "summary": "Mostrar la información de un Docente",
+                "operationId": "0b8775202f149f367497a96369991297",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "nombre": {
+                                            "type": "string",
+                                            "example": "Aderson Felix"
+                                        },
+                                        "apellido": {
+                                            "type": "string",
+                                            "example": "Jara Lazaro"
+                                        },
+                                        "fecha_nacimiento": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "2020-09-03"
+                                        },
+                                        "correo": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "houston29@gmail.com"
+                                        },
+                                        "telefono": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "+1-743-586-3830"
+                                        },
+                                        "direccion": {
+                                            "type": "string",
+                                            "format": "date",
+                                            "example": "321 Myrl Station New Roel, OK 22856"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2023-02-23T00:09:16.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2023-02-23T12:33:45.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "No query results for model [App\\\\Models\\\\Docente] #id"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

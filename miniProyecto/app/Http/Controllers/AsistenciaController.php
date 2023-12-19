@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alumno;
 use App\Models\Asistencia;
 use Illuminate\Http\Request;
 
@@ -44,6 +45,12 @@ class AsistenciaController extends Controller
     public function show(Asistencia $asistencia)
     {
         //
+    }
+
+    public function showasistenciaAlumno( $id)
+    {
+        $alumno = Alumno::find($id);
+
     }
 
     /**
